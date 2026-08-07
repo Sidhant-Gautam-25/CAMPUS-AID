@@ -1,0 +1,321 @@
+{
+  "id": "abc_college",
+  "name": "ABC College",
+  "tagline": "Your AI companion for ABC College",
+  "office_contact": "Visit Room 101 or call 1800-XXX-XXXX",
+  "colors": {
+    "primary": "#2563eb",
+    "primary_dark": "#1e40af"
+  },
+  "policies": {
+    "internal_exam": {
+      "title": "Internal Exam Policy",
+      "category": "academic",
+      "rules": [
+        "If a student misses an internal exam due to medical reasons, they must submit a medical certificate within 3 days.",
+        "A re-test will be conducted only after approval from the HOD.",
+        "Without medical proof, marks will be considered zero."
+      ]
+    },
+    "attendance": {
+      "title": "Attendance Policy",
+      "category": "academic",
+      "rules": [
+        "Minimum 75% attendance required to sit for semester exams.",
+        "Below 65% attendance requires special permission from the principal.",
+        "Attendance below 50% will result in automatic detention."
+      ]
+    },
+    "scholarship": {
+      "title": "Scholarship Policy",
+      "category": "financial",
+      "rules": [
+        "Merit scholarship requires minimum 8.0 CGPA.",
+        "Financial aid is available for students with family income below 2.5 LPA.",
+        "Students with any active backlog are NOT eligible for merit scholarship."
+      ]
+    },
+    "fee": {
+      "title": "Fee Policy",
+      "category": "financial",
+      "rules": [
+        "Semester fee must be paid before the 15th of the first month of each semester.",
+        "Late payment attracts a fine of Rs.50 per day.",
+        "Students facing financial hardship can apply for fee deferral through the principal's office."
+      ]
+    },
+    "hostel": {
+      "title": "Hostel Policy",
+      "category": "administrative",
+      "rules": [
+        "Hostel students must return by 9:00 PM on weekdays.",
+        "Overnight absence requires written permission from parents and warden.",
+        "Hostel fee is separate from tuition fee and due on the 1st of every month."
+      ]
+    },
+    "grievance": {
+      "title": "Grievance Policy",
+      "category": "administrative",
+      "rules": [
+        "Students can raise grievances through the Student Grievance Portal.",
+        "All grievances must be resolved within 7 working days.",
+        "If unresolved, students can escalate to the college ombudsman."
+      ]
+    },
+    "mental_health": {
+      "title": "Mental Health Support",
+      "category": "emotional",
+      "rules": [
+        "ABC College has a dedicated Student Counselor available Monday-Friday, 10 AM to 5 PM in Room 205.",
+        "Counselor contact: counselor@abccollege.edu or call +91-9876543210.",
+        "All counseling sessions are completely confidential and free of cost.",
+        "For urgent mental health crisis: iCall Helpline - 9152987821 (available 24/7).",
+        "For suicide prevention support: Vandrevala Foundation Helpline - 1860-2662-345 (24/7 free)."
+      ]
+    },
+    "contacts": {
+      "title": "Important Contacts",
+      "category": "administrative",
+      "rules": [
+        "College Office: Room 101, Phone: 1800-XXX-XXXX",
+        "Principal's Office: Room 102, available 10 AM to 4 PM",
+        "Examination Cell: Room 103, exam@abccollege.edu",
+        "Hostel Warden: Room 301 (Boys), Room 302 (Girls)",
+        "Anti-Ragging Helpline: 1800-180-5522 (24/7 free)"
+      ]
+    },
+    "academic_integrity_policy": {
+      "title": "Academic Integrity Policy",
+      "category": "academic",
+      "rules": [
+        "Careful and thorough preparation for classes, including reading, completion of assignments, finding required background material, and reflecting on relevant issues.",
+        "Regular and prompt attendance for the entire class session unless there is a serious reason for absence.",
+        "Effort to maintain careful and focused attention during class.",
+        "Participation in class discussion by both speaking and listening.",
+        "Consistent attendance at lectures, events, study groups, and/or conferences with the instructor, as required or suggested by the instructor.",
+        "Asking questions and seeking appropriate assistance from peers, academic support staff, and instructors, as needed.",
+        "Respect for instructors and students.",
+        "Careful and thorough preparation for and complete honesty in fulfilling assignments, writing papers, citing sources, and taking tests and examinations.",
+        "Speaking to any student observed in violation of academic integrity, to discourage such violation. If this is not successful, reporting the violation to the instructor."
+      ]
+    },
+    "cheating_policy": {
+      "title": "Cheating Policy",
+      "category": "academic",
+      "rules": [
+        "Using material or data not specifically allowed by the instructor during the taking of an examination, test or quiz, such as material written by another student with or without his or her knowledge, cheat sheets whether on paper or electronic, textbooks and/or notes, unauthorized use of calculators, phones, watches or any other unauthorized aid.",
+        "Collaborating during an in-class or on-line examination, test or quiz, either in the giving or receiving of information or improper collaboration.",
+        "Using textbooks, materials or assistance outside the directions of the instructor on a take-home examination or laboratory report.",
+        "Stealing, using or transmitting verbally, electronically, or otherwise, examinations, tests, quizzes or portions thereof, or other likewise confidential information before or during the time of the exam.",
+        "Stealing, receiving, or transmitting verbally, electronically, or otherwise, assignments to/from other students."
+      ]
+    },
+    "plagiarism_policy": {
+      "title": "Plagiarism Policy",
+      "category": "academic",
+      "rules": [
+        "Using generative artificial intelligence tools in the completion of course assignments unless an instructor explicitly authorizes their use."
+      ]
+    },
+    "academic_integrity_policy_1": {
+      "title": "Academic Integrity Policy",
+      "category": "academic",
+      "rules": [
+        "Submitting for a grade in one course any material previously or simultaneously submitted for a grade in another course without documented authorization from both instructors.",
+        "Substituting for another student or permitting any other person to substitute for oneself to take a test or examination.",
+        "Falsifying laboratory or research data or results.",
+        "Falsifying or inventing bibliographical entries.",
+        "Withholding knowledge of cheating or plagiarism.",
+        "Knowingly participating in another student’s act of cheating or plagiarism.",
+        "Willfully committing, aiding, or abetting any act of cheating.",
+        "Plagiarism is defined as the submission of work that incorporates ideas from another individual and presents these ideas as one’s own without adequate acknowledgement of the source.",
+        "Presenting published or unpublished work prepared by others, or dictated by others, as one’s own, including papers purchased or borrowed from any person or organization.",
+        "Presenting, as one’s own, reports, assignments, or exercises copied from or dictated by others.",
+        "Incorporating formal lecture notes, on-line course material, or information from textbooks into one’s own work without acknowledgement and thus presenting them as original.",
+        "Presenting, as one’s own, computer solutions, multi-media projects, or computer programs developed by someone else.",
+        "Copying multimedia objects without appropriate citation, and presenting this as one’s own original work.",
+        "Copying the ideas and/or language of any other person or persons, without appropriate citation or acknowledgement, and presenting this as one’s own original work.",
+        "Willfully committing, aiding or abetting any act of plagiarism"
+      ]
+    },
+    "reporting_violations_of_academic_integrity": {
+      "title": "Reporting Violations of Academic Integrity",
+      "category": "academic",
+      "rules": [
+        "Instructors are responsible for determining when a violation of academic integrity has occurred, assigning the consequence for the course, and reporting the violation to Academic Affairs.",
+        "To report a violation to Academic Affairs, the instructor must complete the Violation of Academic Integrity Form.",
+        "The VPAA is responsible for keeping track of the number of times a student is reported."
+      ]
+    },
+    "appeals_procedure": {
+      "title": "Appeals Procedure",
+      "category": "academic",
+      "rules": [
+        "Academic Integrity cases should first be addressed between the faculty member and the student in an effort to reconcile their differences.",
+        "If the faculty member determines that a violation of Academic Integrity has occurred, he or she will complete the appropriate form and submit the form to the VPAA.",
+        "If the student disagrees with the outcome, he or she will have three weeks from receipt of notification to present an appeal in a signed letter to the VPAA.",
+        "Appeals may only be submitted on the following grounds: evidence of improper or inadequate procedure, prejudicial conduct, disproportionate sanction, or new evidence not available at the time of the hearing.",
+        "The Appeals Board for the School of Undergraduate Studies will be composed of four members: the Chair of the Academic Standards Committee, one other faculty member appointed ad hoc by the VPAA, a student success adviser, and the VPAA of the School of Undergraduate Studies.",
+        "If the case is brought to the Appeals Board, both student and faculty member will submit relevant evidence (including a list of witnesses) to the office of the VPAA three working days before the hearing."
+      ]
+    },
+    "appeals_board_hearing_procedures": {
+      "title": "Appeals Board Hearing Procedures",
+      "category": "administrative",
+      "rules": [
+        "No attorneys or parents/guardians are to be present at the Appeals Board hearing.",
+        "A student may receive support from a member of the College community during the hearing.",
+        "The name of the support person must be submitted to the office of the VPAA three working days before the hearing.",
+        "All participants in the hearing must have three working days' notice of the hearing.",
+        "Only individuals approved by the VPAA may be present at the hearing.",
+        "An appeal based on new evidence will be referred to the Chair of the Academic Standards Committee for a second hearing.",
+        "The Appeals Board will make a decision based on the evidence presented at the hearing.",
+        "The decision of the Board is final.",
+        "The VPAA will communicate the decision to the student within ten working days of the hearing."
+      ]
+    },
+    "academic_integrity_policy_on_artificial_intelligence_technology": {
+      "title": "Academic Integrity Policy on Artificial Intelligence Technology",
+      "category": "academic",
+      "rules": [
+        "The use of generative artificial intelligence tools should not be used in the completion of course assignments unless an instructor explicitly authorizes their use.",
+        "Faculty members have the right to determine whether they would like to use generative artificial intelligence tools in their courses."
+      ]
+    },
+    "default_policy_on_generative_ai_tools": {
+      "title": "Default Policy on Generative AI Tools",
+      "category": "academic",
+      "rules": [
+        "Generative AI tools are not permitted in courses, unless explicitly authorized by the instructor.",
+        "Library database searches and generative assistance with citation tools are permitted.",
+        "Generative searches in browser are permitted.",
+        "Editing assistance built into Microsoft Word and other products provided by the college are permitted.",
+        "Certain exceptions will apply for students with disabilities, and students are encouraged to contact the Center for Accessibility and Learning Services (CALS)."
+      ]
+    },
+    "faculty_responsibility_for_ai_tools_on_course_syllabus": {
+      "title": "Faculty Responsibility for AI Tools on Course Syllabus",
+      "category": "academic",
+      "rules": [
+        "Faculty must have a clearly written description of the use of AI tools on the course syllabus, including use of AI detection tools.",
+        "Faculty must communicate precisely the conditions and criteria for use of AI tools.",
+        "Faculty must describe precisely how students are expected to attribute and cite the use of AI tools.",
+        "Faculty must use AI detection tools carefully and with adequate knowledge of how the detection tool is operating."
+      ]
+    },
+    "student_responsibility_for_ai_tool_usage": {
+      "title": "Student Responsibility for AI Tool Usage",
+      "category": "academic",
+      "rules": [
+        "Students are obligated to follow the instructor's guidance regarding the nature of AI tool usage.",
+        "Students are obligated to follow the instructor's guidance regarding if and how AI tool usage is to be attributed and cited in submitted work.",
+        "If no attribution or citation guidance is given by the instructor, students should adopt the style typically used in the discipline most closely aligned with the course.",
+        "Students assume ownership of and responsibility for submitted work that may be violative of other college policies."
+      ]
+    },
+    "student_accommodation_for_ai_tool_usage": {
+      "title": "Student Accommodation for AI Tool Usage",
+      "category": "academic",
+      "rules": [
+        "Certain exceptions will apply for students who require accommodation as documented following the process established by the Center for Accessibility and Learning Services (CALS).",
+        "An exception is any tool approved for use in the student’s accommodation plan from CALS."
+      ]
+    },
+    "reporting_inappropriate_content": {
+      "title": "Reporting Inappropriate Content",
+      "category": "administrative",
+      "rules": [
+        "Inappropriate or offensive content may be reported to Vice President of Academic Affairs for consideration of appropriate next steps, if any."
+      ]
+    },
+    "use_of_ai_tools": {
+      "title": "Use of AI Tools",
+      "category": "academic",
+      "rules": [
+        "Students assume responsibility for the content generated by AI.",
+        "Depending on the specific course, the use of AI may be expected or restricted."
+      ]
+    },
+    "standard_allowed_tools": {
+      "title": "Standard Allowed Tools",
+      "category": "academic",
+      "rules": [
+        "The AI tools identified on this list are considered standard and allowed in all classes, unless otherwise noted by the course instructor.",
+        "If a student uses one or more of these tools across all courses, they should consult with their instructors."
+      ]
+    },
+    "ai_tools_-_instructor_permission_required": {
+      "title": "AI Tools - Instructor Permission Required",
+      "category": "academic",
+      "rules": [
+        "This list includes examples of AI tools used to create student content that are allowed only with instructor permission.",
+        "When AI tools are permitted for these purposes, the student is responsible for following the necessary citation and"
+      ]
+    },
+    "use_of_ai_tools_in_coursework": {
+      "title": "Use of AI Tools in Coursework",
+      "category": "academic",
+      "rules": [
+        "Artificial intelligence tools such as large language models are not permitted to be used in preparing submitted work for this course.",
+        "Artificial intelligence tools such as large language models are permitted to be used in preparing submitted work for some parts of this course.",
+        "Artificial intelligence tools such as large language models are encouraged to prepare submitted work for this course's assignments.",
+        "Any student work submitted using AI tools should clearly indicate what work is the student’s work and what part is generated by the AI."
+      ]
+    },
+    "use_of_ai_detection_tools": {
+      "title": "Use of AI Detection Tools",
+      "category": "academic",
+      "rules": [
+        "Student work may be submitted to AI or plagiarism detection tools to ensure that student work product is human created.",
+        "The submission of AI generated answers is a violation of the Academic Integrity Policy."
+      ]
+    },
+    "citation_of_ai_tools": {
+      "title": "Citation of AI Tools",
+      "category": "academic",
+      "rules": [
+        "If AI use is permitted in your class, it is important that you distinguish your original work from work generated by AI or created collaboratively with AI.",
+        "You should cite to the AI Tool that you used whenever your instructor requires citation or when are using content entirely or partially created by AI at any stage during the assignment creation process from idea generation to final assignment turned in for a grade.",
+        "This includes content that you have substantively edited or paraphrased."
+      ]
+    },
+    "submission_requirements": {
+      "title": "Submission Requirements",
+      "category": "academic",
+      "rules": [
+        "Unless your instructor requires a different method, you should also include a transcript of your interaction with the AI tool as an additional attachment or appendix when you submit your assignment."
+      ]
+    },
+    "assignment_documentation": {
+      "title": "Assignment Documentation",
+      "category": "academic",
+      "rules": [
+        "Depending on the discipline and assignment, it may also be appropriate to include specific information on your prompts and results in the assignment's methods section."
+      ]
+    },
+    "student_responsibility_for_ai-generated_content": {
+      "title": "Student Responsibility for AI-Generated Content",
+      "category": "academic",
+      "rules": [
+        "Students assume ownership of and responsibility for submitted work that may be violative of other college policies.",
+        "Students are aware that AI-generated content may be false or biased."
+      ]
+    },
+    "use_of_ai_tools_in_courses": {
+      "title": "Use of AI Tools in Courses",
+      "category": "academic",
+      "rules": [
+        "The use of AI may be expected or restricted depending on the specific course.",
+        "Students assume responsibility for the content generated by AI.",
+        "If a student uses one or more of the standard allowed tools across all courses, they should consult with their instructors."
+      ]
+    },
+    "citation_rules_for_ai_tools": {
+      "title": "Citation Rules for AI Tools",
+      "category": "academic",
+      "rules": [
+        "The American Psychological Association, Chicago Manual of Style, and the Modern Language Association have all responded to the use of AI tools by providing citation rules and examples."
+      ]
+    }
+  }
+}

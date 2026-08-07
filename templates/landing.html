@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusAid — AI Companion for College Students</title>
+    <link rel="stylesheet" href="/static/design-system.css">
+    <style>
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════════════════
+           NAVBAR
+           ═══════════════════════════════════════════ */
+
+        .navbar {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .nav-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-theme {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            width: 40px;
+            height: 36px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .nav-theme:hover {
+            background: var(--bg-subtle);
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════ */
+
+        .hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           CTA CARDS
+           ═══════════════════════════════════════════ */
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+
+        .cta-card {
+            padding: 32px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            text-align: left;
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .cta-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+
+        .cta-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cta-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .cta-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .cta-description {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .cta-arrow {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-card:hover .cta-arrow {
+            gap: 10px;
+        }
+
+        /* ═══════════════════════════════════════════
+           FEATURES
+           ═══════════════════════════════════════════ */
+
+        .features {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 48px;
+            letter-spacing: -0.8px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-fast);
+        }
+
+        .feature-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .feature-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════ */
+
+        .footer {
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-heart {
+            color: var(--danger);
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════ */
+
+        @media (max-width: 720px) {
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">CampusAid</div>
+        <button class="nav-theme" onclick="toggleTheme()" title="Toggle theme">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span>✨</span>
+            <span>AI-Powered Student Support</span>
+        </div>
+        <h1 class="hero-title">
+            Meet your <span class="highlight">AI college</span><br>
+            companion
+        </h1>
+        <p class="hero-subtitle">
+            An emotionally intelligent assistant that knows your college's policies, understands your struggles, and
+            helps you take the next step — from exam stress to fee deferrals.
+        </p>
+
+        <div class="cta-grid">
+            <a href="/chat" class="cta-card">
+                <div class="cta-icon">🎓</div>
+                <div class="cta-title">I'm a Student</div>
+                <div class="cta-description">
+                    Chat with your AI companion. Get instant answers, emotional support, and help with anything
+                    college-related.
+                </div>
+                <span class="cta-arrow">Start chatting →</span>
+            </a>
+
+            <a href="/admin" class="cta-card">
+                <div class="cta-icon">🛡️</div>
+                <div class="cta-title">I'm an Admin</div>
+                <div class="cta-description">
+                    Manage your institution's policies. Upload documents, review AI-extracted rules, and configure your
+                    bot.
+                </div>
+                <span class="cta-arrow">Admin login →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="section-label">Why CampusAid</div>
+        <h2 class="section-title">Built for how students actually struggle</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💙</div>
+                <div class="feature-title">Empathetic Intelligence</div>
+                <div class="feature-desc">Detects emotion in every message. Responds with genuine warmth, not corporate
+                    templates.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <div class="feature-title">Document Q&A</div>
+                <div class="feature-desc">Upload assignments, syllabi, or notes. Ask questions and get answers grounded
+                    in your actual materials.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <div class="feature-title">Bilingual Support</div>
+                <div class="feature-desc">Speaks English, Hindi, and Hinglish naturally. Matches your language, message
+                    by message.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Smart Onboarding</div>
+                <div class="feature-desc">Colleges drop a PDF, AI extracts every policy in minutes. Zero manual data
+                    entry.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚨</div>
+                <div class="feature-title">Crisis Safety</div>
+                <div class="feature-desc">Automatic crisis detection with mental health helplines. Because every student
+                    deserves a lifeline.</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">College-Specific</div>
+                <div class="feature-desc">Not generic advice. Knows YOUR college's fee structure, exam rules, and hostel
+                    policies.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        Built with <span class="footer-heart">💙</span> for every student who's ever felt alone at 2 AM.
+    </footer>
+
+    <script>
+        // Theme toggle
+        function initTheme() {
+            const savedTheme = localStorage.getItem("campusaid_theme") || "light";
+            applyTheme(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            applyTheme(newTheme);
+            localStorage.setItem("campusaid_theme", newTheme);
+        }
+
+        function applyTheme(theme) {
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                document.getElementById("themeIcon").textContent = "☀️";
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+                document.getElementById("themeIcon").textContent = "🌙";
+            }
+        }
+
+        window.onload = initTheme;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{
+  "id": "xyz_institute",
+  "name": "XYZ Institute of Technology",
+  "tagline": "Smart support for XYZ students",
+  "office_contact": "Visit Admin Block, Ground Floor or call 1800-YYY-YYYY",
+  "colors": {
+    "primary": "#059669",
+    "primary_dark": "#047857"
+  },
+  "policies": {
+    "internal_exam": {
+      "title": "Internal Exam Policy",
+      "category": "academic",
+      "rules": [
+        "Missed internal exams require a medical certificate within 5 working days.",
+        "Re-tests are conducted only at the end of the semester.",
+        "A maximum of 2 re-tests per semester are allowed per student."
+      ]
+    },
+    "attendance": {
+      "title": "Attendance Policy",
+      "category": "academic",
+      "rules": [
+        "Minimum 80% attendance required to sit for semester exams (stricter than ABC).",
+        "Between 70-80% requires HOD approval and counseling.",
+        "Below 70% results in semester repetition."
+      ]
+    },
+    "scholarship": {
+      "title": "Scholarship Policy",
+      "category": "financial",
+      "rules": [
+        "Merit scholarship available for students with CGPA above 8.5.",
+        "Sports scholarship available for state and national-level athletes.",
+        "Need-based aid available for families with income under 3 LPA."
+      ]
+    },
+    "fee": {
+      "title": "Fee Policy",
+      "category": "financial",
+      "rules": [
+        "Tuition fee due before the 10th of each semester start month.",
+        "Late fee penalty: Rs.100 per day after the 10th.",
+        "Installment payment available — apply through Finance Office."
+      ]
+    },
+    "hostel": {
+      "title": "Hostel Policy",
+      "category": "administrative",
+      "rules": [
+        "Hostel curfew at 10:00 PM on weekdays, 11:00 PM on weekends.",
+        "Visitors allowed only in common areas, 4 PM to 7 PM.",
+        "Hostel fee includes meals and is paid quarterly."
+      ]
+    },
+    "grievance": {
+      "title": "Grievance Policy",
+      "category": "administrative",
+      "rules": [
+        "Submit grievances via the XYZ Connect mobile app.",
+        "Resolution guaranteed within 5 working days.",
+        "Escalate to Director's Office if unresolved."
+      ]
+    },
+    "mental_health": {
+      "title": "Mental Health Support",
+      "category": "emotional",
+      "rules": [
+        "XYZ Wellness Center available 24/7 in Block C.",
+        "Counselor: wellness@xyzinstitute.edu or call +91-9988776655.",
+        "Free peer support groups every Wednesday at 5 PM.",
+        "Crisis helpline: iCall - 9152987821 (24/7 free).",
+        "Vandrevala Foundation: 1860-2662-345 (24/7 free)."
+      ]
+    },
+    "contacts": {
+      "title": "Important Contacts",
+      "category": "administrative",
+      "rules": [
+        "Admin Block (Main): 1800-YYY-YYYY",
+        "Director's Office: Block A, 1st Floor",
+        "Examination Cell: exam@xyzinstitute.edu",
+        "Hostel Warden: Block B (Boys), Block D (Girls)",
+        "Campus Security: Available 24/7 at Gate 1"
+      ]
+    }
+  }
+}

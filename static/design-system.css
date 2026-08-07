@@ -1,0 +1,301 @@
+/* ═══════════════════════════════════════════
+   CAMPUSAID DESIGN SYSTEM
+   Shared styles across all pages
+   ═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+    /* Deep blue primary (matches dark mode aesthetic) */
+    --primary: #1e40af;
+    --primary-hover: #1e3a8a;
+    --primary-light: #eff6ff;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+
+    /* Text — softer than pure black */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+
+    /* Backgrounds — subtle warm tint */
+    --bg-page: #fafbfc;
+    --bg-card: #ffffff;
+    --bg-subtle: #f1f5f9;
+    --bg-hover: #f8fafc;
+
+    /* Borders */
+    --border: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --border-focus: #1e40af;
+
+    /* Sidebar (deep navy — matches primary vibe) */
+    --sidebar-bg: #1e293b;
+    --sidebar-text: #ffffff;
+    --sidebar-text-muted: #cbd5e1;
+    --sidebar-text-dim: #64748b;
+    --sidebar-border: #334155;
+    --sidebar-border-strong: #475569;
+    --sidebar-hover: #334155;
+
+    /* Category colors */
+    --cat-academic-bg: #dbeafe;
+    --cat-academic-text: #1e40af;
+    --cat-financial-bg: #d1fae5;
+    --cat-financial-text: #065f46;
+    --cat-administrative-bg: #fef3c7;
+    --cat-administrative-text: #92400e;
+    --cat-emotional-bg: #fce7f3;
+    --cat-emotional-text: #9f1239;
+
+    /* Shadows — slightly stronger for depth */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.12);
+    --shadow-focus: 0 0 0 3px rgba(30, 64, 175, 0.15);
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 999px;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition: 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════
+   DARK THEME OVERRIDES
+   Applied when <html> or <body> has [data-theme="dark"]
+   ═══════════════════════════════════════════ */
+
+[data-theme="dark"] {
+    /* Deep electric blue accent */
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --primary-light: #1e3a8a;
+
+    /* Text */
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-light: #64748b;
+
+    /* Pitch black backgrounds */
+    --bg-page: #000000;
+    --bg-card: #0a0a0a;
+    --bg-subtle: #171717;
+    --bg-hover: #1a1a1a;
+
+    /* Borders */
+    --border: #262626;
+    --border-strong: #404040;
+    --border-focus: #3b82f6;
+
+    /* Sidebar (even blacker than main) */
+    --sidebar-bg: #000000;
+    --sidebar-text: #f8fafc;
+    --sidebar-text-muted: #cbd5e1;
+    --sidebar-text-dim: #52525b;
+    --sidebar-border: #171717;
+    --sidebar-border-strong: #262626;
+    --sidebar-hover: #0a0a0a;
+
+    /* Category colors (darker) */
+    --cat-academic-bg: #1e3a8a;
+    --cat-academic-text: #bfdbfe;
+    --cat-financial-bg: #14532d;
+    --cat-financial-text: #a7f3d0;
+    --cat-administrative-bg: #78350f;
+    --cat-administrative-text: #fde68a;
+    --cat-emotional-bg: #831843;
+    --cat-emotional-text: #fbcfe8;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
+    --shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.3);
+
+    --danger-light: #431a1a;
+}
+
+/* Smooth theme transition */
+body,
+.chat-header,
+.upload-area,
+.chat-input,
+.message,
+.suggestion-card,
+.chat-messages,
+.stat-card,
+.upload-card,
+.review-section,
+.current-policies,
+.policy-card {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS (reusable across pages)
+   ═══════════════════════════════════════════ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.btn-secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #dc2626;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════
+   CATEGORY BADGES (shared)
+   ═══════════════════════════════════════════ */
+
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.category-academic {
+    background: var(--cat-academic-bg);
+    color: var(--cat-academic-text);
+}
+
+.category-financial {
+    background: var(--cat-financial-bg);
+    color: var(--cat-financial-text);
+}
+
+.category-administrative {
+    background: var(--cat-administrative-bg);
+    color: var(--cat-administrative-text);
+}
+
+.category-emotional {
+    background: var(--cat-emotional-bg);
+    color: var(--cat-emotional-text);
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+
+.hidden {
+    display: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login — CampusAid</title>
+    <link rel="stylesheet" href="/static/design-system.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .nav-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-theme {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            width: 40px;
+            height: 36px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-theme:hover {
+            background: var(--bg-subtle);
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px 36px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin: 0 auto 20px;
+        }
+
+        .login-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .login-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-family: inherit;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            outline: none;
+            transition: all var(--transition-fast);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-focus);
+        }
+
+        .form-input.error {
+            border-color: var(--danger);
+        }
+
+        .login-btn {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            margin-top: 8px;
+        }
+
+        .login-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .error-message {
+            background: var(--danger-light);
+            color: var(--danger);
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .demo-hint {
+            margin-top: 20px;
+            padding: 12px;
+            background: var(--bg-subtle);
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .demo-hint strong {
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">CampusAid</a>
+        <button class="nav-theme" onclick="toggleTheme()">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </nav>
+
+    <div class="container">
+        <div class="login-card">
+            <div class="login-icon">🛡️</div>
+            <h1 class="login-title">Admin Login</h1>
+            <p class="login-subtitle">Access your institution's dashboard</p>
+
+            <div class="error-message" id="errorMsg">Invalid password. Try again.</div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="collegeSelect">Select Institution</label>
+                    <select class="form-input" id="collegeSelect" required>
+                        <option value="">Loading colleges...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="passwordInput">Password</label>
+                    <input type="password" class="form-input" id="passwordInput" placeholder="Enter admin password"
+                        required>
+                </div>
+
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+
+            <div class="demo-hint">
+                Demo password: <strong>admin2026</strong>
+            </div>
+
+            <a href="/" class="back-link">← Back to home</a>
+        </div>
+    </div>
+
+    <script>
+        const DEMO_PASSWORD = "admin2026";
+
+        async function loadColleges() {
+            try {
+                const response = await fetch("/colleges");
+                const data = await response.json();
+                const select = document.getElementById("collegeSelect");
+                select.innerHTML = "";
+
+                data.colleges.forEach(college => {
+                    const option = document.createElement("option");
+                    option.value = college.id;
+                    option.textContent = college.name;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Failed to load colleges:", error);
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById("passwordInput").value;
+            const collegeId = document.getElementById("collegeSelect").value;
+            const errorMsg = document.getElementById("errorMsg");
+            const passwordInput = document.getElementById("passwordInput");
+
+            if (password === DEMO_PASSWORD) {
+                sessionStorage.setItem("campusaid_admin", "true");
+                sessionStorage.setItem("campusaid_admin_college", collegeId);
+                window.location.href = `/admin/${collegeId}`;
+            } else {
+                errorMsg.classList.add("show");
+                passwordInput.classList.add("error");
+                passwordInput.value = "";
+                setTimeout(() => {
+                    errorMsg.classList.remove("show");
+                    passwordInput.classList.remove("error");
+                }, 3000);
+            }
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem("campusaid_theme") || "light";
+            applyTheme(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            applyTheme(newTheme);
+            localStorage.setItem("campusaid_theme", newTheme);
+        }
+
+        function applyTheme(theme) {
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                document.getElementById("themeIcon").textContent = "☀️";
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+                document.getElementById("themeIcon").textContent = "🌙";
+            }
+        }
+
+        window.onload = function () {
+            initTheme();
+            loadColleges();
+        };
+    </script>
+</body>
+
+</html>

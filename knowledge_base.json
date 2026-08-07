@@ -1,0 +1,78 @@
+{
+  "internal_exam": {
+    "title": "Internal Exam Policy",
+    "category": "academic",
+    "rules": [
+      "If a student misses an internal exam due to medical reasons, they must submit a medical certificate within 3 days.",
+      "A re-test will be conducted only after approval from the HOD.",
+      "Without medical proof, marks will be considered zero."
+    ]
+  },
+  "attendance": {
+    "title": "Attendance Policy",
+    "category": "academic",
+    "rules": [
+      "Minimum 75% attendance required to sit for semester exams.",
+      "Below 65% attendance requires special permission from the principal.",
+      "Attendance below 50% will result in automatic detention."
+    ]
+  },
+  "scholarship": {
+    "title": "Scholarship Policy",
+    "category": "financial",
+    "rules": [
+      "Merit scholarship requires minimum 8.0 CGPA.",
+      "Financial aid is available for students with family income below 2.5 LPA.",
+      "Students with any active backlog are NOT eligible for merit scholarship."
+    ]
+  },
+  "fee": {
+    "title": "Fee Policy",
+    "category": "financial",
+    "rules": [
+      "Semester fee must be paid before the 15th of the first month of each semester.",
+      "Late payment attracts a fine of Rs.50 per day.",
+      "Students facing financial hardship can apply for fee deferral through the principal's office."
+    ]
+  },
+  "hostel": {
+    "title": "Hostel Policy",
+    "category": "administrative",
+    "rules": [
+      "Hostel students must return by 9:00 PM on weekdays.",
+      "Overnight absence requires written permission from parents and warden.",
+      "Hostel fee is separate from tuition fee and due on the 1st of every month."
+    ]
+  },
+  "grievance": {
+    "title": "Grievance Policy",
+    "category": "administrative",
+    "rules": [
+      "Students can raise grievances through the Student Grievance Portal.",
+      "All grievances must be resolved within 7 working days.",
+      "If unresolved, students can escalate to the college ombudsman."
+    ]
+  },
+  "mental_health": {
+    "title": "Mental Health Support",
+    "category": "emotional",
+    "rules": [
+      "ABC College has a dedicated Student Counselor available Monday-Friday, 10 AM to 5 PM in Room 205.",
+      "Counselor contact: counselor@abccollege.edu or call +91-9876543210.",
+      "All counseling sessions are completely confidential and free of cost.",
+      "For urgent mental health crisis: iCall Helpline - 9152987821 (available 24/7).",
+      "For suicide prevention support: Vandrevala Foundation Helpline - 1860-2662-345 (24/7 free)."
+    ]
+  },
+  "contacts": {
+    "title": "Important Contacts",
+    "category": "administrative",
+    "rules": [
+      "College Office: Room 101, Phone: 1800-XXX-XXXX",
+      "Principal's Office: Room 102, available 10 AM to 4 PM",
+      "Examination Cell: Room 103, exam@abccollege.edu",
+      "Hostel Warden: Room 301 (Boys), Room 302 (Girls)",
+      "Anti-Ragging Helpline: 1800-180-5522 (24/7 free)"
+    ]
+  }
+}
