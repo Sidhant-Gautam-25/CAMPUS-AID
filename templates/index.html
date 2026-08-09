@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusAid 🎓</title>
+    <title>CampusAid </title>
     <link rel="stylesheet" href="/static/design-system.css">
     <style>
         body {
@@ -18,9 +18,9 @@
             width: 100vw;
         }
 
-        /* ═══════════════════════════════════════════
+        /* 
        SIDEBAR
-       ═══════════════════════════════════════════ */
+        */
 
         .sidebar {
             width: 280px;
@@ -215,9 +215,9 @@
             letter-spacing: 0.4px;
         }
 
-        /* ═══════════════════════════════════════════
+        /* 
        MAIN CHAT AREA
-       ═══════════════════════════════════════════ */
+        */
 
         .main {
             flex: 1;
@@ -449,9 +449,9 @@
             line-height: 1.4;
         }
 
-        /* ═══════════════════════════════════════════
+        /* 
    DOC ATTACHMENT CHIP
-   ═══════════════════════════════════════════ */
+    */
 
         .doc-chip {
             display: flex;
@@ -509,9 +509,9 @@
             color: white;
         }
 
-        /* ═══════════════════════════════════════════
+        /* 
    CHAT INPUT (NEW)
-   ═══════════════════════════════════════════ */
+    */
 
         .chat-input {
             display: flex;
@@ -616,7 +616,7 @@
     <body>
         <button id="expandBtn" class="expand-btn" onclick="toggleSidebar()" style="display:none;"
             title="Expand sidebar">
-            ▶
+            
         </button>
         <div class="app">
             <div class="app">
@@ -624,7 +624,7 @@
                 <div class="sidebar">
                     <div class="sidebar-header">
                         <button class="collapse-btn" onclick="toggleSidebar()" title="Collapse sidebar">
-                            <span id="collapseIcon">◀</span>
+                            <span id="collapseIcon"></span>
                         </button>
                         <button class="new-chat-btn" onclick="createNewChat()">
                             <span class="btn-icon">+</span>
@@ -638,7 +638,7 @@
 
                     <div class="sidebar-footer">
                         <button class="theme-toggle" onclick="toggleTheme()">
-                            <span id="themeIcon">🌙</span>
+                            <span id="themeIcon"></span>
                             <span id="themeLabel">Dark mode</span>
                         </button>
                         <div class="version-text">CampusAid v1.0</div>
@@ -657,16 +657,16 @@
 
                     <!-- Document attachment chip (only shows when doc is uploaded) -->
                     <div id="docChip" class="doc-chip hidden">
-                        <span class="doc-chip-icon">📄</span>
+                        <span class="doc-chip-icon"></span>
                         <span class="doc-chip-name" id="docChipName">document.pdf</span>
-                        <button class="doc-chip-remove" onclick="removeDocument()">✕</button>
+                        <button class="doc-chip-remove" onclick="removeDocument()"></button>
                     </div>
 
                     <div class="chat-input">
                         <input type="file" id="fileInput" accept=".pdf" style="display:none" onchange="uploadFile()">
                         <button class="input-icon-btn" onclick="document.getElementById('fileInput').click()"
                             title="Attach a PDF">
-                            📎
+                            
                         </button>
                         <input type="text" id="userInput" placeholder="Type your message..."
                             onkeypress="handleEnter(event)">
@@ -676,9 +676,9 @@
             </div>
 
             <script>
-                // ─────────────────────────────────────────
+                // 
                 // CHAT STATE MANAGEMENT
-                // ─────────────────────────────────────────
+                // 
 
                 let chats = JSON.parse(localStorage.getItem("campusaid_chats") || "[]");
                 let currentChatId = null;
@@ -697,9 +697,9 @@
                     return chats.find(c => c.id === currentChatId);
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // COLLEGES
-                // ─────────────────────────────────────────
+                // 
 
                 async function loadColleges() {
                     try {
@@ -711,9 +711,9 @@
                     }
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // SIDEBAR
-                // ─────────────────────────────────────────
+                // 
 
                 function renderSidebar() {
                     const list = document.getElementById("chatList");
@@ -729,15 +729,15 @@
                         item.className = "chat-item" + (chat.id === currentChatId ? " active" : "");
                         item.innerHTML = `
                 <div class="chat-title" onclick="loadChat('${chat.id}')">${chat.title}</div>
-                <button class="delete-btn" onclick="deleteChat('${chat.id}', event)">🗑</button>
+                <button class="delete-btn" onclick="deleteChat('${chat.id}', event)"></button>
             `;
                         list.appendChild(item);
                     });
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // CHAT OPERATIONS
-                // ─────────────────────────────────────────
+                // 
 
                 function createNewChat() {
                     const newChat = {
@@ -777,9 +777,9 @@
                     updateDocumentUI();
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // MESSAGE RENDERING
-                // ─────────────────────────────────────────
+                // 
 
                 function renderMessages() {
                     const messagesDiv = document.getElementById("messages");
@@ -788,35 +788,35 @@
                     if (!chat || chat.messages.length === 0) {
                         messagesDiv.innerHTML = `
                 <div class="welcome-state">
-                    <div class="welcome-icon">🎓</div>
+                    <div class="welcome-icon"></div>
                     <div class="welcome-title">Hey there! I'm CampusAid</div>
-                    <div class="welcome-subtitle">Your AI companion for college life. Ask me about exams, fees, scholarships, or just talk to me if you're stressed. I'm here for you. 💙</div>
+                    <div class="welcome-subtitle">Your AI companion for college life. Ask me about exams, fees, scholarships, or just talk to me if you're stressed. I'm here for you. </div>
                 </div>
                 <div class="suggestions-container">
                     <div class="suggestions-title">Try one of these to get started:</div>
                     <div class="suggestions-grid">
                         <div class="suggestion-card" onclick="sendSuggestion('When is the fee deadline?')">
-                            <span class="suggestion-icon">📅</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">When is the fee deadline?</span>
                         </div>
                         <div class="suggestion-card" onclick="sendSuggestion('How do I apply for a scholarship?')">
-                            <span class="suggestion-icon">🎓</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">How do I apply for a scholarship?</span>
                         </div>
                         <div class="suggestion-card" onclick="sendSuggestion('What are the attendance rules?')">
-                            <span class="suggestion-icon">📊</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">What are the attendance rules?</span>
                         </div>
                         <div class="suggestion-card" onclick="sendSuggestion('I am feeling stressed about my exams')">
-                            <span class="suggestion-icon">😓</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">I'm stressed about my exams</span>
                         </div>
                         <div class="suggestion-card" onclick="sendSuggestion('Help me write a fee deferral letter')">
-                            <span class="suggestion-icon">✍️</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">Help me write a fee deferral letter</span>
                         </div>
                         <div class="suggestion-card" onclick="sendSuggestion('What if I miss an internal exam due to illness?')">
-                            <span class="suggestion-icon">🏥</span>
+                            <span class="suggestion-icon"></span>
                             <span class="suggestion-text">Missed exam due to illness</span>
                         </div>
                     </div>
@@ -893,9 +893,9 @@
                     if (typing) typing.remove();
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // SEND MESSAGE
-                // ─────────────────────────────────────────
+                // 
 
                 async function sendMessage() {
                     const userInput = document.getElementById("userInput");
@@ -988,9 +988,9 @@
                     if (event.key === "Enter") sendMessage();
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // DOCUMENT UPLOAD
-                // ─────────────────────────────────────────
+                // 
 
                 async function uploadFile() {
                     const fileInput = document.getElementById("fileInput");
@@ -1037,7 +1037,7 @@
                             saveChats();
                         } else {
                             docChip.classList.add("hidden");
-                            addMessageToDOM("⚠️ " + data.message, "bot");
+                            addMessageToDOM(" " + data.message, "bot");
                         }
                     } catch (error) {
                         document.getElementById("docChip").classList.add("hidden");
@@ -1070,13 +1070,13 @@
                     }
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // THEME TOGGLE
-                // ─────────────────────────────────────────
+                // 
 
-                // ─────────────────────────────────────────
+                // 
                 // SIDEBAR COLLAPSE
-                // ─────────────────────────────────────────
+                // 
 
                 function toggleSidebar() {
                     const sidebar = document.querySelector(".sidebar");
@@ -1115,18 +1115,18 @@
                 function applyTheme(theme) {
                     if (theme === "dark") {
                         document.documentElement.setAttribute("data-theme", "dark");
-                        document.getElementById("themeIcon").textContent = "☀️";
+                        document.getElementById("themeIcon").textContent = "";
                         document.getElementById("themeLabel").textContent = "Light mode";
                     } else {
                         document.documentElement.removeAttribute("data-theme");
-                        document.getElementById("themeIcon").textContent = "🌙";
+                        document.getElementById("themeIcon").textContent = "";
                         document.getElementById("themeLabel").textContent = "Dark mode";
                     }
                 }
 
-                // ─────────────────────────────────────────
+                // 
                 // INIT
-                // ─────────────────────────────────────────
+                // 
 
                 window.onload = async function () {
                     initTheme();

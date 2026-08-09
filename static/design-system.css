@@ -1,7 +1,7 @@
-/* ═══════════════════════════════════════════
+/* 
    CAMPUSAID DESIGN SYSTEM
    Shared styles across all pages
-   ═══════════════════════════════════════════ */
+    */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -86,10 +86,10 @@
     --transition: 0.2s ease;
 }
 
-/* ═══════════════════════════════════════════
+/* 
    DARK THEME OVERRIDES
    Applied when <html> or <body> has [data-theme="dark"]
-   ═══════════════════════════════════════════ */
+    */
 
 [data-theme="dark"] {
     /* Deep electric blue accent */
@@ -167,9 +167,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ═══════════════════════════════════════════
+/* 
    BUTTONS (reusable across pages)
-   ═══════════════════════════════════════════ */
+    */
 
 .btn {
     display: inline-flex;
@@ -238,9 +238,9 @@ body {
     font-size: 13px;
 }
 
-/* ═══════════════════════════════════════════
+/* 
    CATEGORY BADGES (shared)
-   ═══════════════════════════════════════════ */
+    */
 
 .category-badge {
     display: inline-flex;
@@ -273,9 +273,9 @@ body {
     color: var(--cat-emotional-text);
 }
 
-/* ═══════════════════════════════════════════
+/* 
    UTILITY CLASSES
-   ═══════════════════════════════════════════ */
+    */
 
 .hidden {
     display: none !important;

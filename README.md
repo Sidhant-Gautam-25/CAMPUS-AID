@@ -59,30 +59,30 @@ If a student writes something that suggests they are in crisis, the bot responds
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────┐
-│           STUDENT INTERFACE                 │
-│  Chat UI • History • Document Upload        │
-└────────────────┬────────────────────────────┘
-                 │
+
+           STUDENT INTERFACE                 
+  Chat UI • History • Document Upload        
+
+                 
                  ↓
-┌─────────────────────────────────────────────┐
-│           FLASK BACKEND                     │
-│  Routing • Session • Business Logic         │
-└────────┬────────────────────────┬───────────┘
-         │                        │
+
+           FLASK BACKEND                     
+  Routing • Session • Business Logic         
+
+                                 
          ↓                        ↓
-┌────────────────────┐  ┌──────────────────────┐
-│   AI LAYER         │  │  KNOWLEDGE LAYER     │
-│  Groq + LLaMA 3    │  │  College JSONs       │
-│  Emotion Detection │  │  System Prompts      │
-│  Crisis Safety     │  │  Policy Store        │
-└────────────────────┘  └──────────────────────┘
+  
+   AI LAYER             KNOWLEDGE LAYER     
+  Groq + LLaMA 3        College JSONs       
+  Emotion Detection     System Prompts      
+  Crisis Safety         Policy Store        
+  
                                  ↑
-                                 │
-┌─────────────────────────────────────────────┐
-│           ADMIN INTERFACE                   │
-│  Upload • Extract • Review • Manage         │
-└─────────────────────────────────────────────┘
+                                 
+
+           ADMIN INTERFACE                   
+  Upload • Extract • Review • Manage         
+
 ```
 
 The data flow for chat begins when the student sends a message through the frontend. The frontend calls the Flask `/chat` endpoint with the message, the college ID, and any optional document. Flask builds the system prompt using the college policies and the AI personality, then sends the request to Groq LLaMA 3 and returns the response.
@@ -112,22 +112,22 @@ This project is designed to work on free-tier services.
 
 ```
 campusaid/
-├── app.py                    # Main Flask app + chat endpoints
-├── admin.py                  # Admin dashboard routes (separated for clarity)
-├── requirements.txt          # Python dependencies
-├── .env                      # API keys (never committed)
-├── .gitignore
-│
-├── colleges/                 # Multi-tenant data layer
-│   ├── abc_college.json      # ABC College policies + config
-│   └── xyz_institute.json    # XYZ Institute policies + config
-│
-├── static/
-│   └── design-system.css     # Shared design tokens and styles
-│
-└── templates/
-    ├── index.html            # Student chat interface
-    └── admin.html            # Admin dashboard
+ app.py                    # Main Flask app + chat endpoints
+ admin.py                  # Admin dashboard routes (separated for clarity)
+ requirements.txt          # Python dependencies
+ .env                      # API keys (never committed)
+ .gitignore
+
+ colleges/                 # Multi-tenant data layer
+    abc_college.json      # ABC College policies + config
+    xyz_institute.json    # XYZ Institute policies + config
+
+ static/
+    design-system.css     # Shared design tokens and styles
+
+ templates/
+     index.html            # Student chat interface
+     admin.html            # Admin dashboard
 ```
 
 ---
@@ -169,10 +169,9 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-##  Note for repo
+## Note for the Repo
 
-This README has been updated with the CampusAid project details and local setup instructions. The repository now contains the Flask app, admin routes, college JSON data, and frontend templates for CampusAid.
-
+This README has been updated with CampusAid project details and local setup instructions. The repository contains the Flask app, admin routes, college JSON data, and frontend templates for CampusAid.
 
 **5. Run the app**
 
@@ -226,7 +225,7 @@ Building this in limited time meant making hard choices. Here's the honest break
 
 ---
 
-##  Future Roadmap
+## Future Roadmap
 
 **Short Term**
 
@@ -255,12 +254,12 @@ Building this in limited time meant making hard choices. Here's the honest break
 
 - **6 emotional states** — Detected and handled
 - **4 policy categories** — Auto-classified
-- **24 policies** — Extractable from a 7-page PDF in ~2 minutes
+- **24 policies** — Extractable from a 7-page PDF in about 2 minutes
 - **0 credit card required** — Full stack runs on free tiers
 
 ---
 
-##  License
+## License
 
 MIT License — free to use, modify, and adapt.
 
@@ -268,9 +267,9 @@ Please give credit if you build on this. And if you're using it for your college
 
 ---
 
-##  Contact
+## Contact
 
-Built with love for every student who's ever felt alone at 2 AM.
+Built with care for every student who has ever felt alone at 2 AM.
 
 If you want to collaborate, ask questions, or share how you're using CampusAid:
 
@@ -280,4 +279,5 @@ If you want to collaborate, ask questions, or share how you're using CampusAid:
 
 ---
 
-**CampusAid — because no student should have to figure it out alone.** 
+**CampusAid — because no student should have to figure it out alone.**
+

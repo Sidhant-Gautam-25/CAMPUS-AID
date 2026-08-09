@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const avatar = document.createElement("div");
         avatar.classList.add("avatar-wrapper");
-        avatar.innerText = sender === "user" ? "🎓" : "🤖";
+        avatar.innerText = sender === "user" ? "" : "";
         
         const bubble = document.createElement("div");
         bubble.classList.add("message-bubble");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const avatar = document.createElement("div");
         avatar.classList.add("avatar-wrapper");
-        avatar.innerText = "🤖";
+        avatar.innerText = "";
         
         const bubble = document.createElement("div");
         bubble.classList.add("message-bubble");
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (card.classList.contains("pending")) {
                 card.classList.remove("pending");
                 card.classList.add("completed");
-                card.innerHTML = card.innerHTML.replace(`<div class="milestone-number">0${idx+1}</div>`, `<div class="milestone-check">✓</div>`);
+                card.innerHTML = card.innerHTML.replace(`<div class="milestone-number">0${idx+1}</div>`, `<div class="milestone-check"></div>`);
                 
                 // Recalculate and update completion percentage dynamically
                 updateProgress();

@@ -13,9 +13,9 @@ import time
 def register_admin_routes(app, client, COLLEGES, SYSTEM_PROMPTS, build_system_prompt, load_all_colleges):
     """Registers all admin-related routes with the Flask app."""
 
-    # ─────────────────────────────────────────
+    # 
     # ADMIN DASHBOARD HOME
-    # ─────────────────────────────────────────
+    # 
 
     @app.route("/admin/<college_id>")
     def admin_dashboard(college_id):
@@ -25,9 +25,9 @@ def register_admin_routes(app, client, COLLEGES, SYSTEM_PROMPTS, build_system_pr
         return render_template("admin.html", college=college_data)
 
 
-    # ─────────────────────────────────────────
+    # 
     # EXTRACT TEXT FROM PDF/DOCX/TXT
-    # ─────────────────────────────────────────
+    # 
 
     def extract_text_from_file(file):
         filename = file.filename.lower()
@@ -51,9 +51,9 @@ def register_admin_routes(app, client, COLLEGES, SYSTEM_PROMPTS, build_system_pr
             return None
 
 
-    # ─────────────────────────────────────────
+    # 
     # EXTRACT POLICIES FROM A SINGLE CHUNK
-    # ─────────────────────────────────────────
+    # 
 
     def extract_chunk(chunk_text, chunk_num, total_chunks):
         extraction_prompt = f"""You are a policy extraction AI for college handbooks.
@@ -130,9 +130,9 @@ RULES:
             return []
 
 
-    # ─────────────────────────────────────────
+    # 
     # STREAMING UPLOAD ENDPOINT
-    # ─────────────────────────────────────────
+    # 
 
     @app.route("/admin/<college_id>/upload_document", methods=["POST"])
     def admin_upload_document(college_id):
@@ -216,9 +216,9 @@ RULES:
         return Response(stream_with_context(generate()), mimetype="text/event-stream")
 
 
-    # ─────────────────────────────────────────
+    # 
     # SAVE APPROVED POLICIES
-    # ─────────────────────────────────────────
+    # 
 
     @app.route("/admin/<college_id>/save_policies", methods=["POST"])
     def admin_save_policies(college_id):
@@ -308,9 +308,9 @@ RULES:
             return jsonify({"status": "error", "message": f"Save error: {str(e)}"}), 500
 
 
-    # ─────────────────────────────────────────
+    # 
     # GET ALL POLICIES
-    # ─────────────────────────────────────────
+    # 
 
     @app.route("/admin/<college_id>/get_policies", methods=["GET"])
     def admin_get_policies(college_id):
@@ -323,9 +323,9 @@ RULES:
             "college_name": college_data.get("name"),
             "policies": college_data.get("policies", {})
         })
-    # ─────────────────────────────────────────
+    # 
     # DELETE A POLICY
-    # ─────────────────────────────────────────
+    # 
 
     @app.route("/admin/<college_id>/delete_policy/<policy_key>", methods=["DELETE"])
     def admin_delete_policy(college_id, policy_key):

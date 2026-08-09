@@ -772,9 +772,9 @@
         </div>
         <div class="header-right">
             <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle theme">
-                <span id="themeIcon">🌙</span>
+                <span id="themeIcon"></span>
             </button>
-            <a href="#" onclick="testStudentView(event)" class="header-btn primary">👁 Preview Student View</a>
+            <a href="#" onclick="testStudentView(event)" class="header-btn primary"> Preview Student View</a>
             <button class="header-btn logout" onclick="handleLogout()">Logout</button>
         </div>
     </div>
@@ -808,14 +808,14 @@
 
         <!-- UPLOAD SECTION -->
         <div class="upload-card">
-            <h2 class="section-title">📥 Add Policies from Documents</h2>
+            <h2 class="section-title"> Add Policies from Documents</h2>
             <p style="color: #6b7280; font-size: 13px; margin-bottom: 20px;">
                 Drag any college document (PDF, DOCX, TXT) below. Our AI will read it and extract every policy
                 automatically. You review, then approve.
             </p>
 
             <div id="uploadZone" class="upload-zone" onclick="document.getElementById('fileInput').click()">
-                <div class="upload-icon">📄</div>
+                <div class="upload-icon"></div>
                 <div class="upload-title">Drop document here, or click to browse</div>
                 <div class="upload-subtitle">Handbooks, circulars, rule books — anything goes</div>
                 <div class="upload-hint">Supported: PDF, DOCX, TXT • Max 10MB</div>
@@ -842,7 +842,7 @@
         <!-- REVIEW SECTION (hidden until extraction) -->
         <div id="reviewSection" class="review-section hidden">
             <div class="review-header">
-                <h2 class="section-title">✨ Review Extracted Policies</h2>
+                <h2 class="section-title"> Review Extracted Policies</h2>
                 <div class="review-meta">
                     <strong id="reviewCount">0</strong> policies extracted from <span id="reviewFilename">file</span>
                 </div>
@@ -852,20 +852,20 @@
 
             <div class="review-actions">
                 <button class="btn-secondary" onclick="cancelReview()">Cancel</button>
-                <button class="btn-primary" onclick="savePolicies()">✓ Approve & Add to Bot</button>
+                <button class="btn-primary" onclick="savePolicies()"> Approve & Add to Bot</button>
             </div>
         </div>
 
         <!-- CURRENT POLICIES -->
         <!-- CURRENT POLICIES -->
         <div class="current-policies">
-            <h2 class="section-title">📋 Active Policies</h2>
+            <h2 class="section-title"> Active Policies</h2>
             <p style="color: #6b7280; font-size: 13px; margin-bottom: 16px;">
                 These are the policies currently powering your bot.
             </p>
 
             <div class="policies-toolbar">
-                <input type="text" id="searchBox" class="search-box" placeholder="🔍 Search policies..."
+                <input type="text" id="searchBox" class="search-box" placeholder=" Search policies..."
                     oninput="filterPolicies()">
                 <div class="filter-chips" id="filterChips">
                     <div class="filter-chip active" data-category="all" onclick="toggleFilter('all')">All</div>
@@ -896,9 +896,9 @@
         let currentExtractedPolicies = [];
         let discardedIndexes = new Set();
 
-        // ─────────────────────────────────────────
+        // 
         // INITIAL LOAD
-        // ─────────────────────────────────────────
+        // 
 
         window.onload = function () {
             // Check if admin is logged in
@@ -919,9 +919,9 @@
             }
         }
 
-        // ─────────────────────────────────────────
+        // 
         // THEME TOGGLE
-        // ─────────────────────────────────────────
+        // 
 
         function initTheme() {
             const savedTheme = localStorage.getItem("campusaid_theme") || "light";
@@ -938,10 +938,10 @@
         function applyTheme(theme) {
             if (theme === "dark") {
                 document.documentElement.setAttribute("data-theme", "dark");
-                document.getElementById("themeIcon").textContent = "☀️";
+                document.getElementById("themeIcon").textContent = "";
             } else {
                 document.documentElement.removeAttribute("data-theme");
-                document.getElementById("themeIcon").textContent = "🌙";
+                document.getElementById("themeIcon").textContent = "";
             }
         }
 
@@ -1014,7 +1014,7 @@
             </div>
             <span class="category-badge category-${policy.category}">${policy.category}</span>
             <button class="delete-policy-btn" onclick="deletePolicy('${key}', '${policy.title.replace(/'/g, "\\'")}')">
-                🗑 Delete
+                 Delete
             </button>
         `;
                 list.appendChild(item);
@@ -1063,7 +1063,7 @@
                 const data = await response.json();
 
                 if (data.status === "success") {
-                    showNotification("🗑 Deleted", data.message, false);
+                    showNotification(" Deleted", data.message, false);
                     document.getElementById("statTotal").textContent = data.total_policies;
                     delete allPolicies[policyKey];
                     renderPolicies();
@@ -1075,9 +1075,9 @@
             }
         }
 
-        // ─────────────────────────────────────────
+        // 
         // DRAG AND DROP
-        // ─────────────────────────────────────────
+        // 
 
         function setupDragAndDrop() {
             const zone = document.getElementById("uploadZone");
@@ -1104,9 +1104,9 @@
             if (file) uploadFile(file);
         }
 
-        // ─────────────────────────────────────────
+        // 
         // UPLOAD AND PROCESS
-        // ─────────────────────────────────────────
+        // 
 
         async function uploadFile(file) {
             document.getElementById("uploadZone").classList.add("hidden");
@@ -1232,7 +1232,7 @@
             </ul>
             <div class="policy-actions">
                 <button class="policy-action-btn danger" onclick="toggleDiscard(${index})">
-                    <span id="discard-text-${index}">🗑 Discard</span>
+                    <span id="discard-text-${index}"> Discard</span>
                 </button>
             </div>
         `;
@@ -1250,7 +1250,7 @@
             if (discardedIndexes.has(index)) {
                 discardedIndexes.delete(index);
                 card.classList.remove("discarded");
-                text.textContent = "🗑 Discard";
+                text.textContent = " Discard";
             } else {
                 discardedIndexes.add(index);
                 card.classList.add("discarded");
@@ -1304,9 +1304,9 @@
             }
         }
 
-        // ─────────────────────────────────────────
+        // 
         // SAVE APPROVED POLICIES
-        // ─────────────────────────────────────────
+        // 
 
         async function savePolicies() {
             const policiesToSave = currentExtractedPolicies.filter(
@@ -1328,14 +1328,14 @@
                 const data = await response.json();
 
                 if (data.status === "success") {
-                    showNotification("✅ Saved successfully", data.message, false);
+                    showNotification(" Saved successfully", data.message, false);
                     document.getElementById("reviewSection").classList.add("hidden");
                     currentExtractedPolicies = [];
                     discardedIndexes.clear();
                     loadCurrentPolicies();
                 } else if (data.status === "info") {
                     // All duplicates — not an error, just informational
-                    showNotification("ℹ️ Nothing new to add", data.message, false);
+                    showNotification("ℹ Nothing new to add", data.message, false);
                     document.getElementById("reviewSection").classList.add("hidden");
                     currentExtractedPolicies = [];
                     discardedIndexes.clear();
@@ -1347,9 +1347,9 @@
             }
         }
 
-        // ─────────────────────────────────────────
+        // 
         // NOTIFICATIONS
-        // ─────────────────────────────────────────
+        // 
 
         function showNotification(title, text, isError) {
             const notif = document.getElementById("notification");
@@ -1360,9 +1360,9 @@
             setTimeout(() => notif.style.display = "none", 4000);
         }
 
-        // ─────────────────────────────────────────
+        // 
         // PREVIEW STUDENT VIEW
-        // ─────────────────────────────────────────
+        // 
 
         function testStudentView(event) {
             event.preventDefault();

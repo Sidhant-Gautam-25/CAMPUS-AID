@@ -195,13 +195,13 @@
     <nav class="navbar">
         <a href="/" class="nav-brand">CampusAid</a>
         <button class="nav-theme" onclick="toggleTheme()">
-            <span id="themeIcon">🌙</span>
+            <span id="themeIcon"></span>
         </button>
     </nav>
 
     <div class="container">
         <div class="login-card">
-            <div class="login-icon">🛡️</div>
+            <div class="login-icon"></div>
             <h1 class="login-title">Admin Login</h1>
             <p class="login-subtitle">Access your institution's dashboard</p>
 
@@ -290,10 +290,10 @@
         function applyTheme(theme) {
             if (theme === "dark") {
                 document.documentElement.setAttribute("data-theme", "dark");
-                document.getElementById("themeIcon").textContent = "☀️";
+                document.getElementById("themeIcon").textContent = "";
             } else {
                 document.documentElement.removeAttribute("data-theme");
-                document.getElementById("themeIcon").textContent = "🌙";
+                document.getElementById("themeIcon").textContent = "";
             }
         }
 
