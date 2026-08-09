@@ -1,117 +1,62 @@
-# 🎓 CampusAid
+# CampusAid
 
-> An emotionally intelligent AI companion for college students — with a smart onboarding platform that makes it easy for any institution to deploy.
+> An emotionally intelligent AI companion for college students with a smart onboarding platform that makes it easy for any institution to deploy.
 
-CampusAid is an AI-powered chatbot that helps college students navigate policies, deadlines, mental health struggles, and everyday college life. Unlike generic chatbots, it understands each college's specific rules and responds with genuine empathy — from casual questions to crisis moments.
-
----
-
-## ✨ Why CampusAid?
-
-Every college student has been here:
-
-- It's 2 AM. Exam tomorrow. Missed the last internal test. Panicking.
-- Financial trouble. Can't tell parents. Don't know if fee deferral is even an option.
-- Overwhelmed. Feel like quitting. No one to talk to.
-
-Existing solutions fail:
-
-- **Email admin?** Days for a reply.
-- **Google?** Generic advice, not your college.
-- **ChatGPT?** Doesn't know your specific policies.
-- **Friends?** Might be sleeping. Or don't know either.
-
-**CampusAid is the missing layer** — an AI that knows YOUR college, understands YOUR emotions, and helps YOU take the next step.
+CampusAid is an AI-powered chatbot that helps college students navigate policies, deadlines, mental health concerns, and everyday campus life. Unlike generic chatbots, it understands each college's specific rules and responds with genuine empathy, from simple questions to crisis situations.
 
 ---
 
-## 🚀 Key Features
+## Why CampusAid?
 
-### 🧠 Emotionally Intelligent AI
+College life can feel overwhelming at times. It can be 2 AM with an exam tomorrow, a missed internal test, or a panic moment. Sometimes the problem is a financial issue, and the student does not know how to talk to parents or whether a fee deferral is possible. Other times the pressure builds until it feels like quitting.
 
-- Detects 6 emotional states: casual, confused, stressed, frustrated, distressed, crisis
-- Adjusts tone and response style based on detected emotion
-- Empathetic first-aid before information dumps
-- Automatic crisis escalation with helpline numbers (iCall, Vandrevala Foundation)
+Existing solutions often let students down. Emailing college staff can take days for a reply. Google provides general information that is not specific to the student's own college. ChatGPT does not know the college's policies. Friends may be asleep or may not have the right information.
 
-### 🌍 Multi-College Support
-
-- Each college gets an isolated instance with its own policies
-- Clean architecture: one JSON file per college
-- Adding a new college = one file, zero code changes
-
-### 📥 Smart Onboarding (Centerpiece Feature)
-
-- Admins drag-and-drop PDF/DOCX handbooks
-- AI extracts every policy automatically
-- Auto-categorization (academic, financial, administrative, emotional)
-- Live progress streaming during extraction
-- Review and approve with one click
-- Smart duplicate detection
-
-### 📄 Document Q&A for Students
-
-- Students upload their own study materials (PDFs)
-- Ask questions about their assignments, notes, syllabi
-- AI answers using the uploaded document as primary context
-
-### 🌐 Bilingual Support
-
-- Auto-detects Hindi, English, and Hinglish
-- Matches student's language per message
-- No manual switching needed
-
-### 💬 ChatGPT-Style Interface
-
-- Persistent chat history in sidebar
-- Auto-generated conversation titles
-- Multi-chat support with document per conversation
-- Real-time typing indicators
-- Message timestamps
-- Markdown rendering
-- Dark mode
-
-### 🛡️ Admin Dashboard
-
-- Live policy statistics
-- Filter policies by category
-- Real-time search
-- Delete with confirmation
-- Instant bot updates after changes
+CampusAid bridges that gap by knowing the college, recognizing the student's emotional state, and offering guidance that is grounded in the college's own policies.
 
 ---
 
-## 🎬 Demo Scenarios
+## Key Features
 
-**Scenario 1 — Stressed Student**
+### Emotionally Intelligent AI
 
-> Student: "My exam is in 2 days and I've studied nothing. I'm panicking."
->
-> Bot: Acknowledges the anxiety, provides a time-blocked study plan, offers to help further.
+CampusAid detects six emotional states: casual, confused, stressed, frustrated, distressed, and crisis. It adjusts the tone and response style based on the detected emotion, gives empathetic support, and avoids a heavy information dump unless the student is ready for it. In crisis situations, it can escalate immediately with helpline information.
 
-**Scenario 2 — Financial Crisis**
+### Multi-College Support
 
-> Student: "Bhai fees nahi de paunga is baar"
->
-> Bot: Responds in Hinglish, offers fee deferral information, drafts an application letter on request.
+Each college receives an isolated instance with its own policies, stored in separate JSON files. This design keeps college data clean and makes it easy to add a new college by creating one new file rather than changing the application code.
 
-**Scenario 3 — Crisis Moment**
+### Smart Onboarding
 
-> Student: "Nothing matters anymore. I want to quit everything."
->
-> Bot: Immediate empathetic response with crisis helplines (iCall, Vandrevala), no judgment, soft check-in.
+Administrators can upload PDF or DOCX handbooks and the system will extract policies automatically. The AI categorizes policies into academic, financial, administrative, and emotional groups, streams extraction progress in real time, and allows review and approval before the policies are added.
 
-**Scenario 4 — Smart Onboarding (The Wow Moment)**
+### Document Q&A for Students
 
-> Admin drops a 7-page college handbook PDF.
->
-> AI extracts 24 policies in ~2 minutes with live progress bar.
->
-> Admin approves. Bot immediately uses new policies. Student asks a question about the newly added content. Bot answers with fresh knowledge.
+Students can upload their own study materials, such as PDFs, and ask questions about those documents. The AI uses the uploaded document as the primary context when answering questions, making responses focused and relevant.
+
+### Bilingual Support
+
+CampusAid detects Hindi, English, and Hinglish automatically. It matches the student's language without requiring manual switching.
+
+### Chat Interface
+
+The student chat interface stores conversation history in the sidebar, generates titles automatically, supports multiple chats, shows typing indicators, timestamps messages, and renders markdown.
+
+### Admin Dashboard
+
+The admin dashboard provides policy statistics, category filters, real-time search, delete confirmation, and instant bot updates when new policies are added.
 
 ---
 
-## 🏗️ Architecture
+## Demo Scenarios
+
+In one scenario, a stressed student asks for help with an exam tomorrow. The bot acknowledges the anxiety and offers a time-managed study plan with next steps. In another case, a student facing a fee problem receives a response in Hinglish with practical advice and an offer to draft a fee deferral application.
+
+If a student writes something that suggests they are in crisis, the bot responds with warmth, crisis helplines, and a gentle check-in. For onboarding, an admin can upload a 7-page handbook, and the AI can extract policies, let the admin approve them, and use the new policies immediately in student responses.
+
+---
+
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -140,27 +85,13 @@ Existing solutions fail:
 └─────────────────────────────────────────────┘
 ```
 
-**Data Flow — Chat:**
+The data flow for chat begins when the student sends a message through the frontend. The frontend calls the Flask `/chat` endpoint with the message, the college ID, and any optional document. Flask builds the system prompt using the college policies and the AI personality, then sends the request to Groq LLaMA 3 and returns the response.
 
-1. Student sends message → Frontend
-2. Frontend calls Flask `/chat` with message + college_id + optional document
-3. Flask builds system prompt with college policies + AI personality
-4. Groq LLaMA 3 processes and returns empathetic response
-5. Reply streamed back to student
-
-**Data Flow — Smart Onboarding:**
-
-1. Admin uploads PDF → Flask extracts text (PyPDF2/python-docx)
-2. Text split into ~3000-char chunks (rate-limit safe)
-3. Each chunk sent to AI with policy extraction prompt
-4. AI returns structured JSON with categorized policies
-5. Server-Sent Events (SSE) stream progress to frontend in real-time
-6. Admin reviews → approves → merged into college JSON
-7. System prompt regenerated → bot uses new policies immediately
+For smart onboarding, the admin uploads a PDF and Flask extracts text using PyPDF2 or python-docx. The text is split into chunks and sent to the AI with a policy extraction prompt. The AI returns structured policy data, which is streamed to the frontend while the admin reviews and approves it.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 | ----- | ---------- |
@@ -173,11 +104,11 @@ Existing solutions fail:
 | Font | Inter (Google Fonts) |
 | Deployment | Render (free tier) |
 
-**Zero paid services. Everything runs on free tiers.**
+This project is designed to work on free-tier services.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 campusaid/
@@ -192,7 +123,7 @@ campusaid/
 │   └── xyz_institute.json    # XYZ Institute policies + config
 │
 ├── static/
-│   └── design-system.css     # Shared design tokens (colors, fonts, spacing)
+│   └── design-system.css     # Shared design tokens and styles
 │
 └── templates/
     ├── index.html            # Student chat interface
@@ -201,23 +132,22 @@ campusaid/
 
 ---
 
-## 🚀 Local Setup
+## Local Setup
 
 ### Prerequisites
 
-- Python 3.10+
-- Free Groq API key from [console.groq.com](https://console.groq.com)
+Python 3.10 or later is required. You also need a free Groq API key from [console.groq.com](https://console.groq.com).
 
 ### Installation
 
-**1. Clone the repository**
+First clone the repository and change into the project folder.
 
 ```bash
 git clone https://github.com/YourUsername/campusaid.git
 cd campusaid
 ```
 
-**2. Create virtual environment**
+Create and activate a virtual environment.
 
 ```bash
 python -m venv venv
@@ -225,15 +155,13 @@ venv\Scripts\activate      # Windows
 source venv/bin/activate   # Mac/Linux
 ```
 
-**3. Install dependencies**
+Install the Python dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Set up environment variables**
-
-Create a `.env` file in the root:
+Create a `.env` file in the project root with your Groq API key.
 
 ```
 GROQ_API_KEY=your_groq_api_key_here
