@@ -169,7 +169,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-## 📝 Note for Shivam's repo
+##  Note for repo
 
 This README has been updated with the CampusAid project details and local setup instructions. The repository now contains the Flask app, admin routes, college JSON data, and frontend templates for CampusAid.
 
@@ -187,34 +187,34 @@ python app.py
 
 ---
 
-## 🎯 Design Decisions & Tradeoffs
+##  Design Decisions & Tradeoffs
 
 Building this in limited time meant making hard choices. Here's the honest breakdown:
 
 ### What I Chose To Build
 
-- ✅ Deep emotional intelligence (competing chatbots feel robotic)
-- ✅ Live document extraction (biggest differentiator)
-- ✅ Multi-college architecture (proves platform scalability)
-- ✅ Bilingual support (Indian college reality)
+-  Deep emotional intelligence (competing chatbots feel robotic)
+-  Live document extraction (biggest differentiator)
+-  Multi-college architecture (proves platform scalability)
+-  Bilingual support (Indian college reality)
 
 ### What I Deliberately Skipped
 
-- ❌ User authentication — Out of scope. Colleges would integrate their existing SSO in production.
-- ❌ LMS integration — Requires college API access that isn't accessible in short timeframes. Manual document upload proves the concept.
-- ❌ Vector database / RAG — Groq's context window is sufficient for policy databases up to 8000 chars.
-- ❌ Faculty features — Different product entirely. Roadmap item.
-- ❌ Custom AI training — Prompt engineering + LLaMA 3 handles the domain well.
+-  User authentication — Out of scope. Colleges would integrate their existing SSO in production.
+-  LMS integration — Requires college API access that isn't accessible in short timeframes. Manual document upload proves the concept.
+-  Vector database / RAG — Groq's context window is sufficient for policy databases up to 8000 chars.
+-  Faculty features — Different product entirely. Roadmap item.
+-  Custom AI training — Prompt engineering + LLaMA 3 handles the domain well.
 
 ### Trade-offs I Accept
 
-- ⚠️ Free tier rate limits (6000 TPM) — Handled via smart chunking with delays
-- ⚠️ Chat history in localStorage — Simpler than DB, sufficient for demo
-- ⚠️ Manual college onboarding — But 60 seconds via PDF drop, not a real limitation
+-  Free tier rate limits (6000 TPM) — Handled via smart chunking with delays
+-  Chat history in localStorage — Simpler than DB, sufficient for demo
+-  Manual college onboarding — But 60 seconds via PDF drop, not a real limitation
 
 ---
 
-## 🎨 UI Highlights
+##  UI Highlights
 
 - **Design System** — All colors, fonts, spacing defined once, used everywhere
 - **Inter Font** — The typography of choice for modern products (Vercel, Notion, GitHub)
@@ -226,7 +226,7 @@ Building this in limited time meant making hard choices. Here's the honest break
 
 ---
 
-## 🔮 Future Roadmap
+##  Future Roadmap
 
 **Short Term**
 
@@ -251,7 +251,7 @@ Building this in limited time meant making hard choices. Here's the honest break
 
 ---
 
-## 📊 By The Numbers
+## By The Numbers
 
 - **6 emotional states** — Detected and handled
 - **4 policy categories** — Auto-classified
@@ -260,7 +260,7 @@ Building this in limited time meant making hard choices. Here's the honest break
 
 ---
 
-## 📝 License
+##  License
 
 MIT License — free to use, modify, and adapt.
 
@@ -268,16 +268,16 @@ Please give credit if you build on this. And if you're using it for your college
 
 ---
 
-## 💌 Contact
+##  Contact
 
-Built with 💙 for every student who's ever felt alone at 2 AM.
+Built with love for every student who's ever felt alone at 2 AM.
 
 If you want to collaborate, ask questions, or share how you're using CampusAid:
 
-- GitHub: [https://github.com/Shivam-4039]
-- LinkedIn: [https://www.linkedin.com/in/shivam-aditya-singh-24a203244/]
-- Email: [shivamaditya_singh25@mru.ac.in]
+- GitHub: [https://github.com/Sidhant-Gautam-25]
+- LinkedIn: [https://www.linkedin.com/in/sidhant-gautam-77823536a/]
+- Email: [sidhant_gautam25@mru.ac.in]
 
 ---
 
-**CampusAid — because no student should have to figure it out alone.** 🎓✨
+**CampusAid — because no student should have to figure it out alone.** 
